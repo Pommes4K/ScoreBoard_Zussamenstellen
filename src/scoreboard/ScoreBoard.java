@@ -47,7 +47,7 @@ public class ScoreBoard extends JFrame {
         // Die vier JButton sind Platzhalter
         JButton oben = new JButton("oben");
         board.add(oben, BorderLayout.PAGE_START);
-        //PUNKTEPANEL -------------------------------------------------
+        //PUNKTEPANEL --------------------------------------------------
         
         GridLayout myPointLayout = new GridLayout(4, 2);
         JPanel pointPanel = new JPanel(myPointLayout);
