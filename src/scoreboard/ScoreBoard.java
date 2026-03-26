@@ -11,7 +11,6 @@ import javax.swing.border.LineBorder;
 public class ScoreBoard extends JFrame {
 
     //vier Instanzen von Auszeitbutton erstellen
-    private JLabel team1_points = new JLabel("0", SwingConstants.CENTER);
     private TimeOutButton team1_button1 = new TimeOutButton("team1_1");
     private TimeOutButton team1_button2 = new TimeOutButton("team1_2");
     private TimeOutButton team2_button1 = new TimeOutButton("team2_1");
@@ -50,18 +49,40 @@ public class ScoreBoard extends JFrame {
         board.add(oben, BorderLayout.PAGE_START);
         //PUNKTEPANEL -------------------------------------------------
         
-        GridLayout myPointLayout = new GridLayout(6, 6);
+        GridLayout myPointLayout = new GridLayout(4, 2);
         JPanel pointPanel = new JPanel(myPointLayout);
+        
+        JLabel textS = new JLabel("Punkte",JLabel.RIGHT);
+        textS.setFont(textS.getFont().deriveFont(22f));
+        JLabel textE = new JLabel("Stand",JLabel.LEFT);
+        textE.setFont(textS.getFont().deriveFont(22f));
+        
+        JLabel teamName1 = new JLabel("Team 1",JLabel.CENTER);
+        JLabel teamName2 = new JLabel("Team 2",JLabel.CENTER);
+        
+        JButton right = new JButton("Punktestand 1");
+        JButton down = new JButton("Punktestand 2");
+        
+        pointPanel.add(textS);
+        pointPanel.add(textE);
+        pointPanel.add(teamName1);
+        pointPanel.add(teamName2);
+        pointPanel.add(right);
+        pointPanel.add(down);
+        
+        
+        
         pointPanel.setBorder(new LineBorder(Color.BLACK, 3));
         board.add(pointPanel, BorderLayout.CENTER);
         
         
         //Punktestand ende --------------------------------------------
+        
         JButton rechts = new JButton("rechts");
         board.add(rechts, BorderLayout.LINE_END);
         JButton unten = new JButton("unten");
-        
         board.add(unten, BorderLayout.PAGE_END);    
+        
         /*NEU Ende###################################*/
         
         //Auszeitfenster
